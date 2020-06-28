@@ -1,0 +1,11 @@
+[Unit]
+Description=SoftEther VPN Client
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/home/admin/vpnclient/vpnclient start
+ExecStop=/home/admin/vpnclient/vpnclient stop
+
+[Install]
+WantedBy=multi-user.target
