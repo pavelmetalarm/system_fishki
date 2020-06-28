@@ -1,0 +1,6 @@
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         192.168.30.1    0.0.0.0         UG    0      0        0 vpn_vpn
+45.67.230.96    192.168.0.1     255.255.255.255 UGH   0      0        0 eth0
+192.168.0.0     0.0.0.0         255.255.255.0   U     100    0        0 eth0
+192.168.30.0    0.0.0.0         255.255.255.0   U     0      0        0 vpn_vpn
