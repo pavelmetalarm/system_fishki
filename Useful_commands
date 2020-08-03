@@ -1,0 +1,157 @@
+AWX token for GitHub : 07e41a719088eb15ff15d7251c23071c4bf4d796
+
+netstat -tulpn | grep LISTEN     открытые порты
+netstat -tunlp | less       просто все подключения
+netstat -nap | grep mysql   какие порты слушает приложение
+
+
+lsof -i -P -n                    открытые порты
+lsof -i :80		непосредственно по порту
+
+
+###   https://www.tecmint.com/find-linux-server-geographic-location/
+Узнать локацию по IP:
+curl https://ipvigilante.com/<your ip address>
+
+
+чтобы найти процесс, прослушивающий конкретный порт в Linux, следующим образом:
+netstat -ltnp | grep -w ':80'
+или
+fuser 80/tcp
+
+
+скан порта 
+nmap 192.168.1.1 -p 1488
+
+чоткая подсветочка
+echo -e "\e[30;48;5;82m $(pwd) \e[0m"
+
+# расцветка PS:
+export PS1='\[\033[01;31m\]\u\[\033[01;33m\]@\[\033[01;36m\]\h \[\033[01;33m\]\w \[\033[01;35m\]\$ \[\033[00m\]'
+
+#АЛИАСЫ:
+alias c=clear
+alias h=history
+alias ll='ls -la'
+
+
+
+
+
+узнать,хард(1) или ссд (0):
+cat /sys/block/sda/queue/rotational
+
+пример залития текста в  .bashrc
+echo -e "строка 1\nстрока 2" >> /tmp/test.txt
+
+Oi5r9uLsgb
+
+
+айпишник  на поверхности
+
+ip a | grep -o   "192.168.0...." | head -1 | figlet
+
+
+
+
+штучки,которые стоит тут же установить для удобства (CENTOS):
+
+sudo yum install -y epel-release && sudo yum update -y  && sudo yum install -y  network-scripts bind-utils tree net-tools  mailx tmux nano yum-cron lsof  htop yum-utils psmisc mlocate stress  rsync links nmap traceroute nc telnet bash-completion  tmux vim mc wget  htop ; echo -e "alias c=clear\nalias p=ping\nalias h=history"  >>  ~/.bashrc; source  ~/.bashrc
+
+штучки,которые стоит тут же установить для удобства(DEBIAN):
+sudo apt-get update && sudo apt-get install net-tools
+
+
+
+показать конфиг без комментов и пустых строк:
+grep -v '^#' имя_файла | grep -v '^$'
+
+
+
+iptables подробно :
+ sudo iptables -nvL
+Разрешить все уже установленные соединения:
+ sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+
+вывести все модули nginx:
+ nginx -V 2>&1|xargs -n1|grep module
+
+iptables удалить строку :
+iptables -D INPUT номер
+
+открыть порт (для всех):
+iptables -A INPUT -s 0.0.0.0/0 -p tcp -m tcp --dport 1488  -j ACCEPT
+
+Напечатать 3-ий столбец.
+$ awk '{print $3}' file
+
+
+посмотреть место
+du --max-depth=1 -h /adv/vhosts/mixit/backend 
+
+
+код ответа страницы
+curl -s -o /dev/null -w "%{http_code}" https://we.adv.ru
+
+TREE с подсветкой 
+tree -C
+посмотреть сетевые устройства:
+nmcli -p dev
+GUI для настройки сети :
+nmtui
+
+
+вывести только ID и имена контейнеров 
+docker ps --format "table {{.ID}}\t{{.Names}}"
+еще и со статусами  и портами
+sudo docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Names}}\t{{.Ports}}"
+
+Запуск с учетом всех docker-compose’ов:
+sudo docker-compose -f docker-compose.yml -f docker-compose.override.yml.dist up -d
+
+Способ проверить сертификат и ключ на совместимость
+openssl x509 -in /path/to/yourdomain.crt -noout -modulus | openssl sha1
+openssl rsa -in /path/to/your.key -noout -modulus | openssl sha1
+
+здоровье диска:
+
+yum install smartmontools
+
+
+
+ANSIBLE:
+https://www.8host.com/blog/kak-rabotat-s-ansible-prostaya-i-udobnaya-shpargalka/
+
+Проверить доступность:
+
+ansible all -m ping 
+
+
+Полезное :
+https://github.com/do-community/
+
+
+
+
+
+                            GIT
+Хорошая статья: https://git-scm.com/book/ru/v2/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-Git-%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D1%8C-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9-%D0%B2-%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B9
+
+
+
+ПРОЦЕССЫ:
+
+Убить все процессы определенного пользователя:
+
+pkill -u username
+
+
+
+POWERSHELL
+
+
+Узнать,членом каких групп является человек:
+
+Get-ADUser username -properties memberof | select memberof -expandproperty memberof  
+
