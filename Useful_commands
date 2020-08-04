@@ -155,3 +155,14 @@ POWERSHELL
 
 Get-ADUser username -properties memberof | select memberof -expandproperty memberof  
 
+
+
+
+
+
+KVM USEFUL :
+
+#узнать IP тачки:
+virsh dumpxml VM_NAME | grep "mac address" | awk -F\' '{ print $2}'
+$ arp -an | grep 52:54:00:ce:8a:c4
+
