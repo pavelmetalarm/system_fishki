@@ -56,7 +56,7 @@ ip a | grep -o   "192.168.0...." | head -1 | figlet
 
 штучки,которые стоит тут же установить для удобства (CENTOS):
 
-sudo yum install -y epel-release && sudo yum update -y  && sudo yum install -y  network-scripts bind-utils tree net-tools  mailx tmux nano yum-cron lsof  htop yum-utils psmisc mlocate stress  rsync links nmap traceroute nc telnet bash-completion  tmux vim mc wget  htop ; echo -e "alias c=clear\nalias p=ping\nalias h=history"  >>  ~/.bashrc; source  ~/.bashrc
+sudo yum install -y epel-release && sudo yum update -y  && sudo yum install -y  network-scripts bind-utils tree net-tools  git mailx tmux nano yum-cron lsof  htop yum-utils psmisc mlocate stress  rsync links nmap traceroute nc telnet bash-completion  tmux vim mc wget  htop ; echo -e "alias c=clear\nalias p=ping\nalias h=history"  >>  ~/.bashrc; source  ~/.bashrc
 
 штучки,которые стоит тут же установить для удобства(DEBIAN):
 sudo apt-get update && sudo apt-get install net-tools
