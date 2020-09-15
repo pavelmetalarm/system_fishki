@@ -157,7 +157,12 @@ Get-ADUser username -properties memberof | select memberof -expandproperty membe
 
 
 
+vim:
+for commenting:
+:66,70s/^/#
 
+for uncommenting:
+:66,70s/^#/
 
 
 KVM USEFUL :
