@@ -74,11 +74,17 @@ iptables подробно :
  sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 
-вывести все модули nginx:
- nginx -V 2>&1|xargs -n1|grep module
+удалить правило из таблицы,отличной от дефолта,например из таблицы NAT:
+iptables -t nat -D POSTROUTING 5
+
+
 
 iptables удалить строку :
 iptables -D INPUT номер
+
+удалить правило из таблицы,отличной от дефолта,например из таблицы NAT:
+iptables -t nat -D POSTROUTING 5
+
 
 открыть порт (для всех):
 iptables -A INPUT -s 0.0.0.0/0 -p tcp -m tcp --dport 1488  -j ACCEPT
