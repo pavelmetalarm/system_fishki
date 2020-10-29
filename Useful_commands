@@ -146,6 +146,11 @@ https://github.com/do-community/
 
 pkill -u username
 
+ПОРТЫ,занимаемые кем-то:
+lsof -i -P -n | grep LISTEN 
+netstat -tulpn | grep LISTEN 
+nmap -sTU -O 192.168.0.10
+
 
 
 POWERSHELL
