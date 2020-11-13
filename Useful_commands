@@ -176,3 +176,7 @@ KVM USEFUL :
 virsh dumpxml VM_NAME | grep "mac address" | awk -F\' '{ print $2}'
 $ arp -an | grep 52:54:00:ce:8a:c4
 
+
+yum install -y epel-release
+yum install -y deltarpm tar ethtool net-tools abrt bc fprintd-pam sudo nscd screen vim curl sysstat gdb dstat tcpdump strace htop tmux byobu ncdu mosh iotop git mc pdsh nc socat telnet pciutils mlocate lftp mtr sshpass zip mutt vnstat conntrack-tools nload pwgen ntpdate iptraf bind-utils dmidecode jwhois yum-versionlock mailx lsof yum-utils ngrep yum-cron bash-completion bash-completion-extras lshw
+
